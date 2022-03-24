@@ -11,20 +11,21 @@
     </head>
     <body>
         <div class="container-fluid vh-100" style="background-color:rgb(98, 189, 98)">
-            <div class="row h-100 align-items-center justify-content-center">
-                <nav class="navbar navabar-light bg-white">
-                    <div class="container-fluid">
-                        <a href="{% url 'qrcomp:index' %}" class="navbar-brand">
-                            <img src="{% static 'img/emph_logo.jpg' %}" alt="logo" width="50" height="50" class="d-inline-block align-text-top">
-                            ÉMPH
+            <nav class="navbar navabar-light bg-white">
+                <div class="container-fluid">
+                    <a href="{% url 'qrcomp:index' %}" class="navbar-brand">
+                        <img src="{% static 'img/emph_logo.jpg' %}" alt="logo" width="50" height="50" class="d-inline-block align-text-top">
+                        ÉMPH
+                    </a>
+                    <div class="d-flex justify-content-end">
+                        <a href="{% url 'qrcomp:index' %}" class="btn btn-light">
+                            <img src="{% static 'img/podium.png' %}" alt="" width="40" height="40" class="d-inline-block align-text-top">
                         </a>
-                        <div class="d-flex justify-content-end">
-                            <a href="{% url 'qrcomp:index' %}" class="btn btn-light">
-                                <img src="{% static 'img/emph_logo.jpg' %}" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                            </a>
-                        </div>
                     </div>
-                </nav>
+                </div>
+            </nav>
+
+            <div class="row h-100 align-items-center justify-content-center">
 
                 <div class="col-11">
                     <form action="{% url 'qrcomp:register' %}" method="post" class="bg-light fw-light p-3 mg-auto rounded-3">
