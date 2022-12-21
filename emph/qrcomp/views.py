@@ -45,8 +45,8 @@ def code_entry(request):
         return render(request, 'qrcomp/code.html', {'code': code, 'error_message': "Hiányos felhasználónév"})
     try:
         player = Player.objects.get(username=request.POST["username"])
-        if code.achievers_left and not Transaction.objects.filter(player=player):
-            points = code.achievers_left**2
+        if code.achievers_left and not Transaction.objects.filter(player=player, code=code):
+            points = code.achievers_left*2
             code.achievers_left = F('achievers_left') - 1
             code.save(update_fields=['achievers_left'])
         else:
